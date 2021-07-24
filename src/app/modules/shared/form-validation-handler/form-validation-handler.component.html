@@ -1,0 +1,19 @@
+<ng-container *ngIf="Control && Control.errors && (Control.dirty  || Control.touched)">
+    <div class="invalid-feedback">
+        <div *ngIf="Control.errors.required"><small>{{ControlName}} is required</small></div>
+        <div *ngIf="Control.errors.minlength"><small>{{ControlName}} must be {{Control.errors.minlength.requiredLength}} characters long</small></div>
+        <div *ngIf="Control.errors.maxlength"><small>{{ControlName}} must be maximum {{Control.errors.maxlength.requiredLength}} characters long</small></div>
+        <div *ngIf="Control.errors.pattern"><small>{{ControlName}} is not valid</small></div>
+        <div *ngIf="Control.errors.NotEqual"><small>{{ControlName}} did not match</small></div> 
+        <div *ngIf="Control.errors.alreadyExists"><small>{{ControlName}} is already exists in database</small></div> 
+        <div *ngIf="Control.errors.invalidFileType"><small>File type is not valid</small></div> 
+        <div *ngIf="Control.errors.invalidFileSize"><small>File size is not valid</small></div> 
+        <div *ngIf="Control.errors.invalidFileDimension"><small>File width or height is not valid</small></div> 
+        <div *ngIf="Control.errors.invalidOtp"><small>Entered OTP either wrong or expired</small></div> 
+        <div *ngIf="Control.errors.unverifiedEmail"><small>Email id is not verified</small></div>   
+        <div *ngIf="Control.errors.invalidCityPriority"><small>City priority already selected</small></div>   
+        <div *ngIf="Control.errors.noHumanFaceDetected"><small>No human face detected</small></div>   
+        <div *ngIf="Control.errors.multipleFaceDetected"><small>Multiple faces detected</small></div>   
+    </div>
+
+</ng-container>
