@@ -1,0 +1,19 @@
+:host::ng-deep {
+  .header {
+    background: #8bc34a;
+    padding: 10px;
+    .image-govt {
+      width: 200px;
+    }
+    .header-title {
+      font-size: 16px;
+      font-weight: 700;
+      color: #2f4c0d; 
+      vertical-align: middle;     
+    }
+    .image-logo {
+        width: 300px;
+        float: right;
+      }
+  }
+}
