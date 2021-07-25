@@ -4,7 +4,7 @@
 
 export const environment = {
   production: false,
-  api_url: 'https://reqres.in/api'
+  api_url: 'https://www.bee-neca.in'
 };
 
 /*

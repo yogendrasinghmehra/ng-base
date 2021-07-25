@@ -5,17 +5,21 @@ import { AdminRoutingModule } from './admin-routing.module';
 import { AdminComponent } from './admin.component';
 import { SidenavComponent } from './sidenav/sidenav.component';
 import { NavbarComponent } from './navbar/navbar.component';
+import { FooterComponent } from './footer/footer.component';
+import { CoreModule } from '../core/core.module';
 
 
 @NgModule({
   declarations: [
     AdminComponent,
     SidenavComponent,
-    NavbarComponent
+    NavbarComponent,
+    FooterComponent
   ],
   imports: [
     CommonModule,
-    AdminRoutingModule
+    AdminRoutingModule,
+    CoreModule
   ]
 })
 export class AdminModule { }

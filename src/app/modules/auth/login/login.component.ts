@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { AbstractControl, FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
 import { AuthService } from '../../core/services/auth.service';
 import { RestService } from '../../core/services/rest.service';
 
@@ -15,6 +16,7 @@ export class LoginComponent implements OnInit {
 
   constructor(
     private formBuilder: FormBuilder,
+    private router:Router,
     private authService:AuthService) { }
   
 
@@ -33,15 +35,13 @@ export class LoginComponent implements OnInit {
     if (this.loginFormGroup.invalid) return;
 
     console.log(this.loginFormGroup.value)    
+    this.router.navigateByUrl('/admin/dashboard');
     //calling api
-    const params={
-    "name": "morpheus",
-    "job": "leader"
-    }
-    this.authService.login(params).subscribe(response=>{
+  
+    //this.authService.login(params).subscribe(response=>{
       //console.log(response);
       
-    })
+    //})
   }
   // onReset(): void {
   //   this.submitted = false;
