@@ -3,6 +3,7 @@ import { AbstractControl, FormBuilder, FormControl, FormGroup, Validators } from
 import { Router } from '@angular/router';
 import { AuthService } from '../../core/services/auth.service';
 import { RestService } from '../../core/services/rest.service';
+import { LoaderService } from '../../shared/loader/loader.service';
 
 @Component({
   selector: 'app-login',
@@ -17,6 +18,7 @@ export class LoginComponent implements OnInit {
   constructor(
     private formBuilder: FormBuilder,
     private router:Router,
+    private loaderService:LoaderService,
     private authService:AuthService) { }
   
 
@@ -34,10 +36,16 @@ export class LoginComponent implements OnInit {
     this.submitted = true;   
     if (this.loginFormGroup.invalid) return;
 
-    console.log(this.loginFormGroup.value)    
-    this.router.navigateByUrl('/admin/dashboard');
+    this.loaderService.showLoader();  
+    
     //calling api
-  
+    setTimeout(() => {
+      this.loaderService.hideLoader();  
+      this.router.navigateByUrl('/admin/dashboard');
+    }, 1000);
+    
+
+    
     //this.authService.login(params).subscribe(response=>{
       //console.log(response);
       
