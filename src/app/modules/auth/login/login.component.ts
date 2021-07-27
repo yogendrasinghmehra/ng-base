@@ -3,6 +3,8 @@ import { AbstractControl, FormBuilder, FormControl, FormGroup, Validators } from
 import { Router } from '@angular/router';
 import { AuthService } from '../../core/services/auth.service';
 import { RestService } from '../../core/services/rest.service';
+import { AlertModal } from '../../shared/alert-message/alert-message.modal';
+import { AlertMessageService } from '../../shared/alert-message/alert-message.service';
 import { LoaderService } from '../../shared/loader/loader.service';
 
 @Component({
@@ -18,8 +20,9 @@ export class LoginComponent implements OnInit {
   constructor(
     private formBuilder: FormBuilder,
     private router:Router,
-    private loaderService:LoaderService,
-    private authService:AuthService) { }
+    private loaderService:LoaderService,    
+    //private alertService:AlertMessageService
+    ) { }
   
 
   ngOnInit(): void {
@@ -27,6 +30,8 @@ export class LoginComponent implements OnInit {
       userId: new FormControl('', [Validators.required]),
       password: new FormControl('', [Validators.required])
     });
+
+    //this.alertService.showAlert(new AlertModal())
   }
   get f(): { [key: string]: AbstractControl } {
     return this.loginFormGroup.controls;

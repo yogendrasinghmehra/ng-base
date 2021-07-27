@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 import { FormValidationHandlerComponent } from './form-validation-handler/form-validation-handler.component';
 import { LoaderComponent } from './loader/loader.component';
 import { LoaderService } from './loader/loader.service';
+import { AlertMessageModule } from './alert-message/alert-message.module';
 
 
 
@@ -12,7 +13,8 @@ import { LoaderService } from './loader/loader.service';
     LoaderComponent
   ],
   imports: [
-    CommonModule
+    CommonModule,
+    AlertMessageModule
   ],
   exports:[
     FormValidationHandlerComponent,
