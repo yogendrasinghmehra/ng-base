@@ -5,6 +5,7 @@ import { HttpTokenInterceptor } from './interceptors/http.token.interceptor';
 import { RestService } from './services/rest.service';
 import { JwtService } from './services/jwt.service';
 import { AuthService } from './services/auth.service';
+import { DashboardService } from './services/dashboard.service';
 
 
 
@@ -18,7 +19,8 @@ import { AuthService } from './services/auth.service';
     {provide:HTTP_INTERCEPTORS,useClass:HttpTokenInterceptor,multi:true},
     RestService,
     JwtService,
-    AuthService
+    AuthService,
+    DashboardService
   ]
 })
 export class CoreModule { }

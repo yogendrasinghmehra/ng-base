@@ -26,26 +26,26 @@
               </div>
             </div>
             <!-- End Title -->
-            <div class="table-responsive">
+            <div class="table-responsive" *ngIf="samplatList">
               <table class="table top-selling-table">
                 <thead>
                   <tr>
                     <th>
-                      <h6 class="text-sm text-medium">Products</h6>
+                      <h6 class="text-sm text-medium">Avatar</h6>
                     </th>
                     <th class="min-width">
                       <h6 class="text-sm text-medium">
-                        Category <i class="lni lni-arrows-vertical"></i>
+                        First Name <i class="lni lni-arrows-vertical"></i>
                       </h6>
                     </th>
                     <th class="min-width">
                       <h6 class="text-sm text-medium">
-                        Revenue <i class="lni lni-arrows-vertical"></i>
+                        Last Name <i class="lni lni-arrows-vertical"></i>
                       </h6>
                     </th>
                     <th class="min-width">
                       <h6 class="text-sm text-medium">
-                        Status <i class="lni lni-arrows-vertical"></i>
+                        Email <i class="lni lni-arrows-vertical"></i>
                       </h6>
                     </th>
                     <th>
@@ -56,26 +56,21 @@
                   </tr>
                 </thead>
                 <tbody>
-                  <tr>
+                  <tr *ngFor="let data of samplatList.data">
                     <td>
-                      <div class="product">
-                        <div class="image">
-                          <img
-                            src="assets/images/products/product-mini-1.jpg"
-                            alt=""
-                          />
-                        </div>
-                        <p class="text-sm">Bedroom</p>
+                      <div class="image">
+                        
+                      <img [src]="data.avatar">
                       </div>
                     </td>
                     <td>
-                      <p class="text-sm">Interior</p>
+                      <p class="text-sm">{{data.first_name}}</p>
                     </td>
                     <td>
-                      <p class="text-sm">$345</p>
+                      <p class="text-sm">{{data.last_name}}</p>
                     </td>
                     <td>
-                      <span class="status-btn close-btn">Pending</span>
+                      <span class="status-btn close-btn">{{data.email}}</span>
                     </td>
                     <td>
                       <div class="action justify-content-end">
@@ -104,459 +99,12 @@
                       </div>
                     </td>
                   </tr>
-                  <tr>
-                    <td>
-                      <div class="product">
-                        <div class="image">
-                          <img
-                            src="assets/images/products/product-mini-2.jpg"
-                            alt=""
-                          />
-                        </div>
-                        <p class="text-sm">Arm Chair</p>
-                      </div>
-                    </td>
-                    <td>
-                      <p class="text-sm">Interior</p>
-                    </td>
-                    <td>
-                      <p class="text-sm">$345</p>
-                    </td>
-                    <td>
-                      <span class="status-btn warning-btn">Refund</span>
-                    </td>
-                    <td>
-                      <div class="action justify-content-end">
-                        <button class="edit">
-                          <i class="lni lni-pencil"></i>
-                        </button>
-                        <button
-                          class="more-btn ml-10 dropdown-toggle"
-                          id="moreAction1"
-                          data-bs-toggle="dropdown"
-                          aria-expanded="false"
-                        >
-                          <i class="lni lni-more-alt"></i>
-                        </button>
-                        <ul
-                          class="dropdown-menu dropdown-menu-end"
-                          aria-labelledby="moreAction1"
-                        >
-                          <li class="dropdown-item">
-                            <a href="#0" class="text-gray">Remove</a>
-                          </li>
-                          <li class="dropdown-item">
-                            <a href="#0" class="text-gray">Edit</a>
-                          </li>
-                        </ul>
-                      </div>
-                    </td>
-                  </tr>
-                  <tr>
-                    <td>
-                      <div class="product">
-                        <div class="image">
-                          <img
-                            src="assets/images/products/product-mini-3.jpg"
-                            alt=""
-                          />
-                        </div>
-                        <p class="text-sm">Sofa</p>
-                      </div>
-                    </td>
-                    <td>
-                      <p class="text-sm">Interior</p>
-                    </td>
-                    <td>
-                      <p class="text-sm">$345</p>
-                    </td>
-                    <td>
-                      <span class="status-btn success-btn">Completed</span>
-                    </td>
-                    <td>
-                      <div class="action justify-content-end">
-                        <button class="edit">
-                          <i class="lni lni-pencil"></i>
-                        </button>
-                        <button
-                          class="more-btn ml-10 dropdown-toggle"
-                          id="moreAction1"
-                          data-bs-toggle="dropdown"
-                          aria-expanded="false"
-                        >
-                          <i class="lni lni-more-alt"></i>
-                        </button>
-                        <ul
-                          class="dropdown-menu dropdown-menu-end"
-                          aria-labelledby="moreAction1"
-                        >
-                          <li class="dropdown-item">
-                            <a href="#0" class="text-gray">Remove</a>
-                          </li>
-                          <li class="dropdown-item">
-                            <a href="#0" class="text-gray">Edit</a>
-                          </li>
-                        </ul>
-                      </div>
-                    </td>
-                  </tr>
-                  <tr>
-                    <td>
-                      <div class="product">
-                        <div class="image">
-                          <img
-                            src="assets/images/products/product-mini-4.jpg"
-                            alt=""
-                          />
-                        </div>
-                        <p class="text-sm">Kitchen</p>
-                      </div>
-                    </td>
-                    <td>
-                      <p class="text-sm">Interior</p>
-                    </td>
-                    <td>
-                      <p class="text-sm">$345</p>
-                    </td>
-                    <td>
-                      <span class="status-btn close-btn">Canceled</span>
-                    </td>
-                    <td>
-                      <div class="action justify-content-end">
-                        <button class="edit">
-                          <i class="lni lni-pencil"></i>
-                        </button>
-                        <button
-                          class="more-btn ml-10 dropdown-toggle"
-                          id="moreAction1"
-                          data-bs-toggle="dropdown"
-                          aria-expanded="false"
-                        >
-                          <i class="lni lni-more-alt"></i>
-                        </button>
-                        <ul
-                          class="dropdown-menu dropdown-menu-end"
-                          aria-labelledby="moreAction1"
-                        >
-                          <li class="dropdown-item">
-                            <a href="#0" class="text-gray">Remove</a>
-                          </li>
-                          <li class="dropdown-item">
-                            <a href="#0" class="text-gray">Edit</a>
-                          </li>
-                        </ul>
-                      </div>
-                    </td>
-                  </tr>
-                  <tr>
-                    <td>
-                      <div class="product">
-                        <div class="image">
-                          <img
-                            src="assets/images/products/product-mini-4.jpg"
-                            alt=""
-                          />
-                        </div>
-                        <p class="text-sm">Kitchen</p>
-                      </div>
-                    </td>
-                    <td>
-                      <p class="text-sm">Interior</p>
-                    </td>
-                    <td>
-                      <p class="text-sm">$345</p>
-                    </td>
-                    <td>
-                      <span class="status-btn close-btn">Canceled</span>
-                    </td>
-                    <td>
-                      <div class="action justify-content-end">
-                        <button class="edit">
-                          <i class="lni lni-pencil"></i>
-                        </button>
-                        <button
-                          class="more-btn ml-10 dropdown-toggle"
-                          id="moreAction1"
-                          data-bs-toggle="dropdown"
-                          aria-expanded="false"
-                        >
-                          <i class="lni lni-more-alt"></i>
-                        </button>
-                        <ul
-                          class="dropdown-menu dropdown-menu-end"
-                          aria-labelledby="moreAction1"
-                        >
-                          <li class="dropdown-item">
-                            <a href="#0" class="text-gray">Remove</a>
-                          </li>
-                          <li class="dropdown-item">
-                            <a href="#0" class="text-gray">Edit</a>
-                          </li>
-                        </ul>
-                      </div>
-                    </td>
-                  </tr>
-                  <tr>
-                    <td>
-                      <div class="product">
-                        <div class="image">
-                          <img
-                            src="assets/images/products/product-mini-4.jpg"
-                            alt=""
-                          />
-                        </div>
-                        <p class="text-sm">Kitchen</p>
-                      </div>
-                    </td>
-                    <td>
-                      <p class="text-sm">Interior</p>
-                    </td>
-                    <td>
-                      <p class="text-sm">$345</p>
-                    </td>
-                    <td>
-                      <span class="status-btn close-btn">Canceled</span>
-                    </td>
-                    <td>
-                      <div class="action justify-content-end">
-                        <button class="edit">
-                          <i class="lni lni-pencil"></i>
-                        </button>
-                        <button
-                          class="more-btn ml-10 dropdown-toggle"
-                          id="moreAction1"
-                          data-bs-toggle="dropdown"
-                          aria-expanded="false"
-                        >
-                          <i class="lni lni-more-alt"></i>
-                        </button>
-                        <ul
-                          class="dropdown-menu dropdown-menu-end"
-                          aria-labelledby="moreAction1"
-                        >
-                          <li class="dropdown-item">
-                            <a href="#0" class="text-gray">Remove</a>
-                          </li>
-                          <li class="dropdown-item">
-                            <a href="#0" class="text-gray">Edit</a>
-                          </li>
-                        </ul>
-                      </div>
-                    </td>
-                  </tr>
-                  <tr>
-                    <td>
-                      <div class="product">
-                        <div class="image">
-                          <img
-                            src="assets/images/products/product-mini-4.jpg"
-                            alt=""
-                          />
-                        </div>
-                        <p class="text-sm">Kitchen</p>
-                      </div>
-                    </td>
-                    <td>
-                      <p class="text-sm">Interior</p>
-                    </td>
-                    <td>
-                      <p class="text-sm">$345</p>
-                    </td>
-                    <td>
-                      <span class="status-btn close-btn">Canceled</span>
-                    </td>
-                    <td>
-                      <div class="action justify-content-end">
-                        <button class="edit">
-                          <i class="lni lni-pencil"></i>
-                        </button>
-                        <button
-                          class="more-btn ml-10 dropdown-toggle"
-                          id="moreAction1"
-                          data-bs-toggle="dropdown"
-                          aria-expanded="false"
-                        >
-                          <i class="lni lni-more-alt"></i>
-                        </button>
-                        <ul
-                          class="dropdown-menu dropdown-menu-end"
-                          aria-labelledby="moreAction1"
-                        >
-                          <li class="dropdown-item">
-                            <a href="#0" class="text-gray">Remove</a>
-                          </li>
-                          <li class="dropdown-item">
-                            <a href="#0" class="text-gray">Edit</a>
-                          </li>
-                        </ul>
-                      </div>
-                    </td>
-                  </tr>
-                  <tr>
-                    <td>
-                      <div class="product">
-                        <div class="image">
-                          <img
-                            src="assets/images/products/product-mini-4.jpg"
-                            alt=""
-                          />
-                        </div>
-                        <p class="text-sm">Kitchen</p>
-                      </div>
-                    </td>
-                    <td>
-                      <p class="text-sm">Interior</p>
-                    </td>
-                    <td>
-                      <p class="text-sm">$345</p>
-                    </td>
-                    <td>
-                      <span class="status-btn close-btn">Canceled</span>
-                    </td>
-                    <td>
-                      <div class="action justify-content-end">
-                        <button class="edit">
-                          <i class="lni lni-pencil"></i>
-                        </button>
-                        <button
-                          class="more-btn ml-10 dropdown-toggle"
-                          id="moreAction1"
-                          data-bs-toggle="dropdown"
-                          aria-expanded="false"
-                        >
-                          <i class="lni lni-more-alt"></i>
-                        </button>
-                        <ul
-                          class="dropdown-menu dropdown-menu-end"
-                          aria-labelledby="moreAction1"
-                        >
-                          <li class="dropdown-item">
-                            <a href="#0" class="text-gray">Remove</a>
-                          </li>
-                          <li class="dropdown-item">
-                            <a href="#0" class="text-gray">Edit</a>
-                          </li>
-                        </ul>
-                      </div>
-                    </td>
-                  </tr>
-                  <tr>
-                    <td>
-                      <div class="product">
-                        <div class="image">
-                          <img
-                            src="assets/images/products/product-mini-4.jpg"
-                            alt=""
-                          />
-                        </div>
-                        <p class="text-sm">Kitchen</p>
-                      </div>
-                    </td>
-                    <td>
-                      <p class="text-sm">Interior</p>
-                    </td>
-                    <td>
-                      <p class="text-sm">$345</p>
-                    </td>
-                    <td>
-                      <span class="status-btn close-btn">Canceled</span>
-                    </td>
-                    <td>
-                      <div class="action justify-content-end">
-                        <button class="edit">
-                          <i class="lni lni-pencil"></i>
-                        </button>
-                        <button
-                          class="more-btn ml-10 dropdown-toggle"
-                          id="moreAction1"
-                          data-bs-toggle="dropdown"
-                          aria-expanded="false"
-                        >
-                          <i class="lni lni-more-alt"></i>
-                        </button>
-                        <ul
-                          class="dropdown-menu dropdown-menu-end"
-                          aria-labelledby="moreAction1"
-                        >
-                          <li class="dropdown-item">
-                            <a href="#0" class="text-gray">Remove</a>
-                          </li>
-                          <li class="dropdown-item">
-                            <a href="#0" class="text-gray">Edit</a>
-                          </li>
-                        </ul>
-                      </div>
-                    </td>
-                  </tr>
-                  <tr>
-                    <td>
-                      <div class="product">
-                        <div class="image">
-                          <img
-                            src="assets/images/products/product-mini-4.jpg"
-                            alt=""
-                          />
-                        </div>
-                        <p class="text-sm">Kitchen</p>
-                      </div>
-                    </td>
-                    <td>
-                      <p class="text-sm">Interior</p>
-                    </td>
-                    <td>
-                      <p class="text-sm">$345</p>
-                    </td>
-                    <td>
-                      <span class="status-btn close-btn">Canceled</span>
-                    </td>
-                    <td>
-                      <div class="action justify-content-end">
-                        <button class="edit">
-                          <i class="lni lni-pencil"></i>
-                        </button>
-                        <button
-                          class="more-btn ml-10 dropdown-toggle"
-                          id="moreAction1"
-                          data-bs-toggle="dropdown"
-                          aria-expanded="false"
-                        >
-                          <i class="lni lni-more-alt"></i>
-                        </button>
-                        <ul
-                          class="dropdown-menu dropdown-menu-end"
-                          aria-labelledby="moreAction1"
-                        >
-                          <li class="dropdown-item">
-                            <a href="#0" class="text-gray">Remove</a>
-                          </li>
-                          <li class="dropdown-item">
-                            <a href="#0" class="text-gray">Edit</a>
-                          </li>
-                        </ul>
-                      </div>
-                    </td>
-                  </tr>
+                 
+                
                 </tbody>
               </table>
               <!-- End Table -->
-              <nav aria-label="Page navigation example">
-                <hr>
-                <ul class="pagination justify-content-center">
-                  <li class="page-item">
-                    <a class="page-link" href="#" aria-label="Previous">
-                      <span aria-hidden="true">&laquo;</span>
-                    </a>
-                  </li>
-                  <li class="page-item"><a class="page-link" href="#">1</a></li>
-                  <li class="page-item"><a class="page-link" href="#">2</a></li>
-                  <li class="page-item"><a class="page-link" href="#">3</a></li>
-                  <li class="page-item">
-                    <a class="page-link" href="#" aria-label="Next">
-                      <span aria-hidden="true">&raquo;</span>
-                    </a>
-                  </li>
-                </ul>
-              </nav>
+              <app-paging [TotalPage]="samplatList.total_pages"></app-paging>
             </div>
           </div>
         </div>

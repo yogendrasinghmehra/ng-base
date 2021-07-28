@@ -7,10 +7,12 @@ import { AlertMessageModule } from './alert-message/alert-message.module';
 
 
 
+
 @NgModule({
   declarations: [
     FormValidationHandlerComponent,
     LoaderComponent
+    
   ],
   imports: [
     CommonModule,
@@ -19,6 +21,8 @@ import { AlertMessageModule } from './alert-message/alert-message.module';
   exports:[
     FormValidationHandlerComponent,
     LoaderComponent
+   
+
   ],
   providers:[LoaderService]
 })

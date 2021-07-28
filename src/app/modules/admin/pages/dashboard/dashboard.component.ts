@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { SampleList } from 'src/app/modules/core/modals/admin/dashboard.modal';
+import { DashboardService } from 'src/app/modules/core/services/dashboard.service';
 
 @Component({
   selector: 'app-dashboard',
@@ -7,9 +9,17 @@ import { Component, OnInit } from '@angular/core';
 })
 export class DashboardComponent implements OnInit {
 
-  constructor() { }
+  samplatList:SampleList;
 
+  constructor(private dashboardService:DashboardService) { }
   ngOnInit(): void {
+
+    this.dashboardService.getAll().subscribe((response:SampleList)=>{
+     
+      this.samplatList=response;
+     
+      
+    });
   }
 
 }
