@@ -1,11 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { AbstractControl, FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
-import { AuthService } from '../../core/services/auth.service';
-import { RestService } from '../../core/services/rest.service';
-import { AlertModal } from '../../shared/alert-message/alert-message.modal';
 import { AlertMessageService } from '../../shared/alert-message/alert-message.service';
-import { LoaderService } from '../../shared/loader/loader.service';
 
 @Component({
   selector: 'app-login',
@@ -20,8 +16,7 @@ export class LoginComponent implements OnInit {
   constructor(
     private formBuilder: FormBuilder,
     private router:Router,
-    private loaderService:LoaderService,    
-    //private alertService:AlertMessageService
+    private alertService:AlertMessageService
     ) { }
   
 
@@ -31,7 +26,12 @@ export class LoginComponent implements OnInit {
       password: new FormControl('', [Validators.required])
     });
 
-    //this.alertService.showAlert(new AlertModal())
+   
+    //this.alertService.success('This is success');
+    //this.alertService.error('This is error');
+    //this.alertService.info('This is info');
+    //this.alertService.warn('This is warning');
+   
   }
   get f(): { [key: string]: AbstractControl } {
     return this.loginFormGroup.controls;
@@ -41,25 +41,14 @@ export class LoginComponent implements OnInit {
     this.submitted = true;   
     if (this.loginFormGroup.invalid) return;
 
-    this.loaderService.showLoader();  
-    
     //calling api
     setTimeout(() => {
-      this.loaderService.hideLoader();  
-      this.router.navigateByUrl('/admin/dashboard');
-    }, 1000);
-    
-
-    
-    //this.authService.login(params).subscribe(response=>{
-      //console.log(response);
       
-    //})
+      this.router.navigateByUrl('/admin/dashboard');
+      this.alertService.success('Logged in successfully.',{ autoClose :true});
+    }, 1000);    
   }
-  // onReset(): void {
-  //   this.submitted = false;
-  //   this.loginFormGroup.reset();
-  // }
+  
  
 
 }

@@ -4,6 +4,7 @@ import { CommonModule } from '@angular/common';
 import { DashboardRoutingModule } from './dashboard-routing.module';
 import { DashboardComponent } from './dashboard.component';
 import { PagingModule } from 'src/app/modules/shared/paging/paging.module';
+import { PaginationModule } from 'ngx-bootstrap/pagination';
 
 
 @NgModule({
@@ -13,7 +14,8 @@ import { PagingModule } from 'src/app/modules/shared/paging/paging.module';
   imports: [
     CommonModule,
     DashboardRoutingModule,
-    PagingModule
+    PaginationModule.forRoot()
+    //PagingModule
   ]
 })
 export class DashboardModule { }

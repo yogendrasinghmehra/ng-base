@@ -8,7 +8,7 @@ import { PagingComponent } from './paging.component';
   declarations: [PagingComponent],
   imports: [
     CommonModule
-  ],
+      ],
   exports:[PagingComponent]
 })
 export class PagingModule { }

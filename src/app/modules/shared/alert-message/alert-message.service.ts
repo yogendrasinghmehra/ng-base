@@ -1,25 +1,46 @@
-import { ComponentFactoryResolver, Injectable, ViewContainerRef } from '@angular/core';
-import { BehaviorSubject } from 'rxjs';
-import { AlertModal } from './alert-message.modal';
+import { Injectable } from '@angular/core';
+import {  Observable, Subject } from 'rxjs';
+import { filter } from 'rxjs/operators';
+import { Alert, AlertType } from './alert-message.modal';
 
-@Injectable()
+@Injectable({ providedIn: 'root' })
 export class AlertMessageService {
   constructor(
-    private viewcontref: ViewContainerRef,
-    private compfactresol: ComponentFactoryResolver) { }
+   ) { }
   
-  alertObs$: BehaviorSubject<AlertModal> = new BehaviorSubject(null);  
-  showAlert(messageDetails:AlertModal)
-  {    
+    private subject = new Subject<Alert>();
+    private defaultId = 'default-alert';
 
-    import('./alert-message.component').then(({AlertMessageComponent})=>{
-      this.viewcontref.clear();
-      const cmp=this.compfactresol.resolveComponentFactory(AlertMessageComponent);
-      this.viewcontref.createComponent(cmp);
-    });
+    // enable subscribing to alerts observable
+    onAlert(id = this.defaultId): Observable<Alert> {
+        return this.subject.asObservable().pipe(filter(x => x && x.id === id));
+    }
 
-    messageDetails.message="lala";
-    messageDetails.type="sjdhjsdh"
-    this.alertObs$.next(messageDetails);
-  }
+    // convenience methods
+    success(message: string, options?: any) {
+        this.alert(new Alert({ ...options, type: AlertType.Success, message }));
+    }
+
+    error(message: string, options?: any) {
+        this.alert(new Alert({ ...options, type: AlertType.Error, message }));
+    }
+
+    info(message: string, options?: any) {
+        this.alert(new Alert({ ...options, type: AlertType.Info, message }));
+    }
+
+    warn(message: string, options?: any) {
+        this.alert(new Alert({ ...options, type: AlertType.Warning, message }));
+    }
+
+    // main alert method    
+    alert(alert: Alert) {
+        alert.id = alert.id || this.defaultId;
+        this.subject.next(alert);
+    }
+
+    // clear alerts
+    clear(id = this.defaultId) {
+        this.subject.next(new Alert({ id }));
+    }
 }

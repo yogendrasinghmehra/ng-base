@@ -3,7 +3,8 @@ import { CommonModule } from '@angular/common';
 import { FormValidationHandlerComponent } from './form-validation-handler/form-validation-handler.component';
 import { LoaderComponent } from './loader/loader.component';
 import { LoaderService } from './loader/loader.service';
-import { AlertMessageModule } from './alert-message/alert-message.module';
+import { AlertMessageComponent } from './alert-message/alert-message.component';
+
 
 
 
@@ -11,16 +12,18 @@ import { AlertMessageModule } from './alert-message/alert-message.module';
 @NgModule({
   declarations: [
     FormValidationHandlerComponent,
-    LoaderComponent
+    LoaderComponent,
+    AlertMessageComponent
     
   ],
   imports: [
-    CommonModule,
-    AlertMessageModule
+    CommonModule
+    
   ],
   exports:[
     FormValidationHandlerComponent,
-    LoaderComponent
+    LoaderComponent,
+    AlertMessageComponent
    
 
   ],

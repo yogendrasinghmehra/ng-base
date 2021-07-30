@@ -1,0 +1,72 @@
+:host ::ng-deep{
+    .alert-container{
+        position: fixed;
+        right: 0;
+        width: 25vw;
+        box-shadow: 0 .125rem .25rem rgba(0,0,0,.075)!important;
+        border-radius: 0;
+        padding: .8rem;        
+        margin: 1rem;
+
+        background-color: #fff !important;
+        z-index: 999;
+        .close{
+            float: right;
+            cursor: pointer;
+        }
+       
+    }
+    .alert-success{
+        border-left:.25rem solid #8bc34a;
+   
+    }
+    .alert-danger{
+        border-left:.25rem solid #842029;
+   
+    }
+    .alert-info{
+        border-left:.25rem solid #055160;
+   
+    }
+    .alert-warning{
+        border-left:.25rem solid #664d03;
+   
+    }
+
+
+
+    
+
+   
+    .slide-left {
+        -webkit-animation: slide-left 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+                animation: slide-left 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+    }
+
+/**
+ * ----------------------------------------
+ * animation slide-left
+ * ----------------------------------------
+ */
+@-webkit-keyframes slide-left {
+    0% {
+      -webkit-transform: translateX(0);
+              transform: translateX(0);
+    }
+    100% {
+      -webkit-transform: translateX(-40px);
+              transform: translateX(-40px);
+    }
+  }
+  @keyframes slide-left {
+    0% {
+      -webkit-transform: translateX(0);
+              transform: translateX(0);
+    }
+    100% {
+      -webkit-transform: translateX(-40px);
+              transform: translateX(-40px);
+    }
+  }
+  
+}
